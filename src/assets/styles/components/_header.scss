@@ -1,4 +1,6 @@
-@use "variables";
+@use "../variables" as *;
+@use "sass:color";
+
 
 .header {
   background-color: $primary;
@@ -9,13 +11,17 @@
     color: white;
 
     &:hover {
-      color: lighten(white, 10%);
+      color: color.scale(white, $lightness: 10%);
     }
   }
 
   &__menu {
     .nav-link {
       color: white;
+
+      .nav-link:is(.active, :hover) {
+        text-decoration: underline;
+      }
 
       &:hover {
         text-decoration: underline;

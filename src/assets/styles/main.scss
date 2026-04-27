@@ -4,9 +4,20 @@
  */
 
 /**
+ * Import variables and mixins first
+ */
+@use "variables";
+//@use "mixins";
+
+/**
  * Import dependencies
  */
 @use "dependencies";
+/**
+ * Import components
+ */
+@use "components/header";
+@use "components/footer";
 
 /**
  * Import layouts
@@ -14,9 +25,7 @@
  */
 
 @use "layouts/home";
-@use "layouts/header";
-@use "layouts/footer";
-@use "layouts/portada";
+
 
 
 /**
