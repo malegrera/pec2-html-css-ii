@@ -1,10 +1,19 @@
 .poster {
   min-height: 100dvh;
   display: grid;
-  gap: 1.5rem;
+  gap: 2rem;
+  padding: clamp(1rem, 4vw, 3rem);
 
+  /* fallback */
   @supports not (display: grid) {
     display: flex;
     flex-direction: column;
+  }
+
+  /* GRID LAYOUT (desktop-first dentro del componente) */
+  @supports (display: grid) {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 1fr auto;
+    align-items: center;
   }
 }

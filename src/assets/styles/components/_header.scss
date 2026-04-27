@@ -19,8 +19,8 @@
     .nav-link {
       color: white;
 
-      .nav-link:is(.active, :hover) {
-        text-decoration: underline;
+      &:is(.active) {
+        color: red;
       }
 
       &:hover {
