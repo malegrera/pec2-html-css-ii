@@ -1,0 +1,25 @@
+@use "variables";
+
+.header {
+  background-color: $primary;
+  color: white;
+
+  &__brand {
+    font-weight: bold;
+    color: white;
+
+    &:hover {
+      color: lighten(white, 10%);
+    }
+  }
+
+  &__menu {
+    .nav-link {
+      color: white;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
