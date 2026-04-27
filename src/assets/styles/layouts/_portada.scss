@@ -1,0 +1,10 @@
+.poster {
+  min-height: 100dvh;
+  display: grid;
+  gap: 1.5rem;
+
+  @supports not (display: grid) {
+    display: flex;
+    flex-direction: column;
+  }
+}

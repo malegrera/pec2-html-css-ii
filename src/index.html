@@ -6,29 +6,32 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
     <!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
+    <title>Jornadas de Artesanía</title>
   </head>
   <body>
-    <div class="uoc-container">
-      <picture>
-        <source
-          srcset="./assets/images/logo.png?as=webp&width=350"
-          type="image/webp"
-        />
-        <img
-          src="./assets/images/logo.png?width=350"
-          alt="Universitat Oberta de Catalunya"
-          class="uoc-logo"
-        />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
-    </div>
+<main class="poster">
+  <header class="poster__header">
+    <h1>Jornadas de Artesanía</h1>
+    <p class="poster__date">12–14 Junio · Sevilla</p>
+  </header>
+
+  <section class="poster__visual">
+    <img src="assets/images/portada.jpg" alt="Artesanía">
+  </section>
+
+  <section class="poster__info">
+    <p>
+      Talleres, charlas y experiencias con artesanos locales.
+    </p>
+    <a href="page1.html" class="btn btn-primary">
+      Ver ponentes
+    </a>
+  </section>
+
+  <footer class="poster__footer">
+    <p>Organiza: Ayuntamiento</p>
+  </footer>
+</main>
     <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script>
     <!-- do not remove this line! -->
