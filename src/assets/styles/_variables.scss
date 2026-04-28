@@ -10,4 +10,11 @@ $font-family-sans-serif:
 $font-family-serif: "Georgia", "Times New Roman", serif;
 
 
+// Media queries
+$breakpoints: (
+  "mobile": 480px,
+  "tablet": 768px,
+  "desktop": 1024px
+);
+
 $mqMinWidth: 420px;

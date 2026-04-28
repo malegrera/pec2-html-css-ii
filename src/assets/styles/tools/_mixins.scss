@@ -1,0 +1,28 @@
+@use "../variables" as *;
+@use "sass:map";
+
+// Mixin para media queries
+@mixin mediaquery($device) {
+  @media (min-width: map.get($breakpoints, $device)) {
+    @content;
+  }
+}
+
+@mixin grid($cols: 12, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  gap: $gap;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-style($bg, $color) {
+  background: $bg;
+  color: $color;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+}

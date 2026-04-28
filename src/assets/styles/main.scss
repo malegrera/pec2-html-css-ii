@@ -7,7 +7,8 @@
  * Import variables and mixins first
  */
 @use "variables";
-//@use "mixins";
+@use "tools/mixins";
+@use "tools/functions";
 
 /**
  * Import dependencies
