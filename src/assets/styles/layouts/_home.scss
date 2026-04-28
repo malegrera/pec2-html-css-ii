@@ -1,19 +1,107 @@
 .poster {
   min-height: 100dvh;
-  display: grid;
-  gap: 2rem;
   padding: clamp(1rem, 4vw, 3rem);
 
-  /* fallback */
-  @supports not (display: grid) {
+  /* MOBILE (base) */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  background: linear-gradient(
+    135deg,
+    oklch(75% 0.12 60),
+    oklch(55% 0.15 30)
+  );
+  color: #222;
+}
+
+/* elementos base */
+.poster__title {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.poster__date {
+  font-size: 1rem;
+}
+
+.poster__image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.poster__tagline {
+  font-size: 1rem;
+}
+
+.poster__cta {
+  width: fit-content;
+}
+
+.poster__organizer {
+  font-size: 0.9rem;
+}
+
+/* =========================
+   ENHANCEMENT: GRID (desktop)
+========================= */
+@supports (display: grid) {
+  @media (min-width: 768px) {
+    .poster {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .poster__title {
+      grid-column: 1 / 9;
+      grid-row: 1;
+      font-size: clamp(3rem, 6vw, 5rem);
+      z-index: 2;
+    }
+
+    .poster__date {
+      grid-column: 1 / 6;
+      grid-row: 1;
+      align-self: end;
+    }
+
+    .poster__image {
+      grid-column: 7 / -1;
+      grid-row: 1 / 4;
+      transform: rotate(-2deg);
+    }
+
+    .poster__tagline {
+      grid-column: 1 / 6;
+      grid-row: 2;
+      font-size: 1.2rem;
+    }
+
+    .poster__cta {
+      grid-column: 1 / 4;
+      grid-row: 3;
+    }
+
+    .poster__organizer {
+      grid-column: 1 / -1;
+      grid-row: 3;
+      justify-self: end;
+    }
+  }
+}
+
+/* =========================
+   FALLBACK (sin grid)
+========================= */
+@supports not (display: grid) {
+  .poster {
     display: flex;
     flex-direction: column;
-  }
-
-  /* GRID LAYOUT (desktop-first dentro del componente) */
-  @supports (display: grid) {
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto 1fr auto;
-    align-items: center;
   }
 }

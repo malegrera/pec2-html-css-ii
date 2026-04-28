@@ -1,31 +1,53 @@
 @use "../variables" as *;
-@use "sass:color";
-
 
 .header {
   background-color: $primary;
+}
+
+/* NAVBAR */
+.header__nav {
+  padding-block: 0.75rem;
+}
+
+/* BRAND */
+.header__brand {
+  font-weight: 700;
   color: white;
+  text-decoration: none;
 
-  &__brand {
-    font-weight: bold;
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+/* MENU */
+.header__menu {
+  gap: 0.5rem;
+
+  .nav-link {
     color: white;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
 
-    &:hover {
-      color: color.scale(white, $lightness: 10%);
+    &:is(:hover, :focus-visible) {
+      text-decoration: underline;
+      opacity: 0.9;
+    }
+
+    &.active {
+      text-decoration: underline;
+      font-weight: 600;
     }
   }
+}
 
-  &__menu {
-    .nav-link {
-      color: white;
+/* HAMBURGER (Bootstrap override ligero) */
+.navbar-toggler {
+  border: none;
+  color: white;
+  font-size: 1.5rem;
 
-      &:is(.active) {
-        color: red;
-      }
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+  &:focus {
+    box-shadow: none;
   }
 }
