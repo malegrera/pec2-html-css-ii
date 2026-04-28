@@ -51,3 +51,20 @@
     box-shadow: none;
   }
 }
+
+/* LOGO + TÍTULO */
+.header__branding {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header__branding img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+.header__brand {
+  margin: 0; // 🔑 importante para alinear bien
+}

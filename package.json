@@ -45,6 +45,8 @@
     "sharp": "^0.33.5"
   },
   "dependencies": {
+    "@fontsource/inder": "^5.2.8",
+    "@fontsource/itim": "^5.2.7",
     "bootstrap": "^5.3.8"
   }
 }
