@@ -12,8 +12,66 @@
 
 <body>
   <include src="./views/header.html"></include>
-  <main class="actividades">
-    <h1 class="actividades__title">Nuestras actividades</h1>
+<main class="actividades">
+
+  <!-- 🧩 TALLERES -->
+  <section class="actividades__talleres">
+    <h1>Talleres artesanales</h1>
+    <p>Explora las actividades prácticas de las jornadas.</p>
+
+    <div class="actividades__grid">
+      <article class="actividades-card">
+        <img src="./assets/images/ceramica.jpg" alt="">
+        <h2>Cerámica</h2>
+        <p>Modelado y cocción tradicional.</p>
+      </article>
+
+      <article class="actividades-card">
+        <img src="./assets/images/forja.jpg" alt="">
+        <h2>Forja</h2>
+        <p>Trabajo artesanal con metales.</p>
+      </article>
+
+      <article class="actividades-card">
+        <img src="./assets/images/textil.jpg" alt="">
+        <h2>Textil</h2>
+        <p>Tejido manual con fibras naturales.</p>
+      </article>
+
+      <article class="actividades-card">
+        <img src="./assets/images/madera.jpg" alt="">
+        <h2>Madera</h2>
+        <p>Carpintería tradicional.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 🖼️ GALERÍA -->
+  <section class="actividades__galeria">
+    <h2>Galería</h2>
+
+    <div class="actividades__galeria-grid">
+      <img src="./assets/images/g1.jpg" alt="">
+      <img src="./assets/images/g2.jpg" alt="">
+      <img src="./assets/images/g3.jpg" alt="">
+      <img src="./assets/images/g4.jpg" alt="">
+    </div>
+  </section>
+
+  <!-- 📩 CONTACTO -->
+  <section class="actividades__contacto">
+    <h2>Contacto</h2>
+
+    <form name="contacto" method="POST" data-netlify="true" class="actividades__form">
+      <input type="hidden" name="form-name" value="contacto">
+
+      <input type="text" name="nombre" placeholder="Nombre" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+
+      <button class="btn btn-primary">Enviar</button>
+    </form>
+  </section>
 
 </main>
   <include src="./views/footer.html"></include>
