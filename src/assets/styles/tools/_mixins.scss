@@ -2,20 +2,30 @@
 @use "sass:map";
 
 // Mixin para media queries
-@mixin mediaquery($device) {
-  @media (min-width: map.get($breakpoints, $device)) {
+@mixin respond($device) {
+  $size: map.get($breakpoints, $device);
+
+  @media (min-width: $size) {
     @content;
   }
 }
 
-@mixin grid($cols: 12, $gap: 1rem) {
+@mixin container($size) {
+  @container (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin grid($cols: 12, $gap: 1rem, $align: stretch) {
   display: grid;
   grid-template-columns: repeat($cols, 1fr);
   gap: $gap;
+  align-items: $align;
 }
 
-@mixin flex-center {
+@mixin flex-center($direction: row) {
   display: flex;
+  flex-direction: $direction;
   justify-content: center;
   align-items: center;
 }
@@ -25,4 +35,20 @@
   color: $color;
   padding: 0.6rem 1.2rem;
   border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+@mixin card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }

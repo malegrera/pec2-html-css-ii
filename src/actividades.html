@@ -58,18 +58,18 @@
     </div>
   </section>
 
-  <!-- 📩 CONTACTO -->
+  <!-- Formulario de contacto -->
   <section class="actividades__contacto">
     <h2>Contacto</h2>
 
-    <form name="contacto" method="POST" data-netlify="true" class="actividades__form">
-      <input type="hidden" name="form-name" value="contacto">
+    <form name="contacto" method="post" data-netlify="true" class="actividades__form">
+      <input class="form-control" type="hidden" name="form-name" value="contacto">
 
-      <input type="text" name="nombre" placeholder="Nombre" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+      <input class="form-control" type="text" name="nombre" placeholder="Nombre" required>
+      <input class="form-control" type="email" name="email" placeholder="Email" required>
+      <textarea class="form-control" name="mensaje" placeholder="Mensaje" required></textarea>
 
-      <button class="btn btn-primary">Enviar</button>
+      <button class="btn btn-primary w-100">Enviar</button>
     </form>
   </section>
 
