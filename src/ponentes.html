@@ -12,9 +12,44 @@
 
 <body>
   <include src="./views/header.html"></include>
-  <main class="ponentes">
-    <h1 class="ponentes__title">Encuentros de artesanos</h1>
+  <main class="ponentes container py-5">
+  <h1 class="ponentes__title text-center mb-5">Ponentes</h1>
 
+  <section class="ponentes__grid">
+
+    <article class="ponentes-card">
+      <img src="assets/images/ponente1.jpg" alt="Ana López">
+      <h2>Ana López</h2>
+      <p class="ponentes-card__role">Ceramista</p>
+      <p>Especialista en técnicas tradicionales de barro.</p>
+      <button class="btn btn-outline-primary">Ver charla</button>
+    </article>
+
+    <article class="ponentes-card">
+      <img src="assets/images/ponente2.jpg" alt="Carlos Ruiz">
+      <h2>Carlos Ruiz</h2>
+      <p class="ponentes-card__role">Ebanista</p>
+      <p>Experto en mobiliario de madera sostenible.</p>
+      <button class="btn btn-outline-primary">Ver charla</button>
+    </article>
+
+    <article class="ponentes-card">
+      <img src="assets/images/ponente3.jpg" alt="Lucía Torres">
+      <h2>Lucía Torres</h2>
+      <p class="ponentes-card__role">Textil</p>
+      <p>Especialista en tejidos naturales y tintes ecológicos.</p>
+      <button class="btn btn-outline-primary">Ver charla</button>
+    </article>
+
+    <article class="ponentes-card">
+      <img src="assets/images/ponente4.jpg" alt="Miguel Sánchez">
+      <h2>Miguel Sánchez</h2>
+      <p class="ponentes-card__role">Vidrio</p>
+      <p>Maestro en vidrio soplado con técnicas contemporáneas.</p>
+      <button class="btn btn-outline-primary">Ver charla</button>
+    </article>
+
+  </section>
 </main>
   <include src="./views/footer.html"></include>
   <script type="module" src="./assets/scripts/main.js"></script>
