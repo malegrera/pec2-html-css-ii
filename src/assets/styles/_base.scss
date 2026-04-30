@@ -1,8 +1,9 @@
 @use "variables" as *;
+@use "./tools/functions" as *;
 
 body {
   font-family: $font-family-base;
-  background-color: bg-soft($primary, 88%);
+  background-color: bg-soft($primary, 50%);
 }
 
 h1, h2, h3, h4 {
