@@ -2,6 +2,7 @@
 
 body {
   font-family: $font-family-base;
+  background-color: bg-soft($primary, 88%);
 }
 
 h1, h2, h3, h4 {

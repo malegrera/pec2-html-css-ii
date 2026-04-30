@@ -1,5 +1,9 @@
 @use "sass:color";
 
+@function bg-soft($color, $lightness: 85%) {
+  @return color.scale($color, $lightness: $lightness);
+}
+
 @function color-alpha($color, $alpha) {
   @return color.adjust($color, $alpha: $alpha);
 }
