@@ -1,7 +1,7 @@
 @use "sass:color";
 
 @function color-alpha($color, $alpha) {
-  @return color.change($color, $alpha: $alpha);
+  @return color.adjust($color, $alpha: $alpha);
 }
 
 @function spacing($multiplier, $base: 0.5rem) {

@@ -14,11 +14,6 @@
  * Import dependencies
  */
 @use "dependencies";
-/**
- * Import components
- */
-@use "components/header";
-@use "components/footer";
 
 /**
  * Import base styles
@@ -26,10 +21,15 @@
 @use "base";
 
 /**
+ * Import components
+ */
+@use "components/header";
+@use "components/footer";
+
+/**
  * Import layouts
  * It's a best practice to use a different partial for each page
  */
-
 @use "layouts/home";
 @use "layouts/ponentes";
 @use "layouts/jornadas";

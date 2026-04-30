@@ -1,11 +1,11 @@
 @use "variables" as *;
 
 body {
-  font-family: $font-body;
+  font-family: $font-family-base;
 }
 
 h1, h2, h3, h4 {
-  font-family: $font-title;
+  font-family: $headings-font-family;
   letter-spacing: 0.5px;
 }
 

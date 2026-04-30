@@ -1,3 +1,5 @@
+@use "../variables" as *;
+
 .ponentes {
   padding: 2rem;
   container-type: inline-size;
@@ -33,7 +35,7 @@
 
   &__role {
     font-weight: bold;
-    color: #8b5e3c;
+    color: $secondary;
     margin-bottom: 0.5rem;
   }
 
@@ -47,7 +49,7 @@
 
   &:hover {
     transform: translateY(-5px);
-    transition: 0.3s;
+    transition: transform 0.3s;
   }
 }
 
