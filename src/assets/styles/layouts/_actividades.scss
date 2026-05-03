@@ -2,21 +2,17 @@
   padding: clamp(1rem, 3vw, 3rem);
   container-type: inline-size;
 
-  /* 🎨 color moderno */
-  --accent: oklch(60% 0.15 40);
 
   h1, h2 {
     margin-bottom: 1rem;
   }
 
-  /* 🧩 TALLERES */
   &__grid {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
   }
 
-  /* 🖼️ GALERÍA */
   &__galeria-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -30,7 +26,6 @@
     }
   }
 
-  /* 📩 FORMULARIO */
   &__form {
     display: flex;
     flex-direction: column;
@@ -44,33 +39,30 @@
       border-radius: 4px;
 
       &:focus {
-        border-color: var(--accent);
         outline: none;
+        border-color: var(--accent);
       }
     }
   }
 }
 
-/* 🧩 CARDS */
 .actividades-card {
-  flex: 1 1 calc(50% - 1.5rem);
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
-
   display: flex;
+  flex: 1 1 calc(50% - 1.5rem);
   flex-direction: column;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
 
   img {
     width: 100%;
     height: 180px;
-    object-fit: cover;
     margin-bottom: 1rem;
+    object-fit: cover;
     border-radius: 4px;
   }
 }
 
-/* 🎯 Capas de cascada (suma puntos) */
 @layer components {
   .actividades-card {
     transition: 0.3s;
@@ -81,7 +73,7 @@
   }
 }
 
-/* 📱 Container queries */
+
 @container (max-width: 700px) {
   .actividades__galeria-grid {
     grid-template-columns: repeat(2, 1fr);

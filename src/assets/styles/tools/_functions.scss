@@ -2,7 +2,7 @@
 @use "sass:color";
 
 @function bg-soft($color, $amount: 80%) {
-  @return mix(white, $color, $amount);
+  @return color.mix(white, $color, $amount);
 }
 
 @function color-alpha($color, $alpha) {

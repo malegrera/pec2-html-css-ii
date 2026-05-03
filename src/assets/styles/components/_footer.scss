@@ -2,10 +2,10 @@
 @use "sass:color";
 
 .footer {
-  background-color: #222;
-  color: #eee;
   width: 100%;
+  color: #eee;
   text-align: center;
+  background-color: #222;
 
   &__content {
     display: flex;
@@ -15,8 +15,10 @@
   }
 
   &__links {
-    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 0;
+    list-style: none;
 
     li {
       display: inline-block;
@@ -31,6 +33,7 @@
       }
     }
   }
+  
    &__bottom {
     width: 100%;
     padding: 1rem;

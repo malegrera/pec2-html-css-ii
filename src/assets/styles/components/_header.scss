@@ -9,13 +9,17 @@
   padding-block: 0.75rem;
 }
 
-/* BRAND */
+
+
 .header__brand {
-  font-weight: 700;
-  color: white;
-  text-decoration: none;
-  display: inline-block; 
+  max-width: 70vw;
   margin: 0;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: white;
+    white-space: normal; //permite salto de línea
+  text-decoration: none;
 }
 
 /* MENU */
@@ -23,8 +27,8 @@
   gap: 0.5rem;
 
   .nav-link {
-    color: white;
     font-weight: 500;
+    color: white;
     transition: opacity 0.2s ease;
 
     &:is(:hover, :focus-visible) {
@@ -33,17 +37,17 @@
     }
 
     &.active {
-      text-decoration: underline;
       font-weight: 600;
+      text-decoration: underline;
     }
   }
 }
 
 /* HAMBURGER (Bootstrap override ligero) */
 .navbar-toggler {
-  border: none;
-  color: white;
   font-size: 1.5rem;
+  color: white;
+  border: none;
 
   &:focus {
     box-shadow: none;
@@ -52,16 +56,14 @@
 
 /* LOGO + TÍTULO */
 
-
 .header__branding {
   display: flex;
+  gap: 0.5rem;
   align-items: center;
-  gap: 0.75rem;
+  min-width: 0;
 }
 
 .header__branding img {
-  height: 50px;
-  width: auto;
-  display: block;
+  width: clamp(32px, 6vw, 60px);
+  height: auto;
 }
-

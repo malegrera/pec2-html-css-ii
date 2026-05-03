@@ -7,8 +7,9 @@
     "parcel:serve": "parcel -p 8123 --target web",
     "parcel:build": "parcel build --target web --no-source-maps --no-cache",
     "clean": "rimraf dist .cache .cache-loader .parcel-cache",
-    "dev": "npm-run-all clean parcel:serve",
-    "build": "npm-run-all clean parcel:build",
+    "dev": "npm-run-all clean stylelint parcel:serve",
+    "build": "npm-run-all clean stylelint parcel:build",
+    "stylelint": "stylelint src/**/*.scss",
     "test": "echo 'Everything is working as expected ✅\nStart working on your project by running \\033[1mnpm run dev\\033[0m'"
   },
   "targets": {
@@ -42,11 +43,17 @@
     "postcss-preset-env": "^11.1.2",
     "posthtml-include": "^2.0.1",
     "rimraf": "^6.1.2",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "stylelint": "^17.10.0",
+    "stylelint-config-recess-order": "^7.7.0",
+    "stylelint-config-recommended-scss": "^17.0.1",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-scss": "^7.0.0"
   },
   "dependencies": {
     "@fontsource/inder": "^5.2.8",
     "@fontsource/itim": "^5.2.7",
-    "bootstrap": "^5.3.8"
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1"
   }
 }

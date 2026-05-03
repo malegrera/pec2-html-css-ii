@@ -1,13 +1,15 @@
+@use "../variables" as *;
+
 .jornadas {
-  padding: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
   container-type: inline-size;
 
   &__content {
-    max-width: 70ch;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    max-width: 70ch;
+    margin: 0 auto;
   }
 
   &__header {
@@ -18,27 +20,29 @@
   }
 
   &__title {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     line-height: 1.2;
   }
 
   &__meta {
     font-size: 0.9rem;
-    color: #777;
+    color: $secondary;
   }
 
   &__figure {
     margin: 0;
 
     img {
+      display: block;
       width: 100%;
-      border-radius: 8px;
+      height: auto;
+      border-radius: 0.5rem;
     }
 
     figcaption {
-      font-size: 0.85rem;
-      color: #666;
       margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: color-mix(in oklch, $dark 60%, $light);
     }
   }
 
@@ -52,9 +56,9 @@
 
   blockquote {
     padding: 1rem 1.5rem;
-    border-left: 4px solid #8b5e3c;
-    background: #faf7f4;
     font-style: italic;
+    background: color-mix(in oklch, $light 90%, white);
+    border-left: 4px solid $secondary;
   }
 
   &__list {
@@ -66,15 +70,15 @@
   }
 
   &__footer-note {
-    font-size: 0.85rem;
-    color: #888;
-    border-top: 1px solid #eee;
     padding-top: 1rem;
+    font-size: 0.85rem;
+    color: color-mix(in oklch, $dark 50%, $light);
+    border-top: 1px solid #eee;
   }
 }
 
-/* 📱 Container query obligatorio */
-@container (max-width: 600px) {
+/* Container query obligatorio */
+@container (max-width: 37.5rem) {
   .jornadas {
     padding: 1rem;
 

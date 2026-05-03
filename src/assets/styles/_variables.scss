@@ -3,8 +3,19 @@
 // Bootstrap variables
 $primary: #c57b57;
 $secondary: #8b5e3c;
-$dark: #222;
+$dark: #1e1e1e;
 $light: #f5f5f5;
+$accent: #d6a15f;
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": #198754,
+  "danger": #dc3545,
+  "warning": #ffc107,
+  "info": #0dcaf0,
+  "light": $light,
+  "dark": $dark
+);
 
 //Bootstrap tipografía
 $font-family-base: "Inder", sans-serif;
@@ -12,10 +23,36 @@ $font-family-sans-serif: $font-family-base;
 $headings-font-family: "Itim", cursive;
 
 //Bootstrap Botones
-$btn-hover-bg-shade-amount: 15%;
 $btn-border-radius: 0.5rem;
 $btn-padding-y: 0.6rem;
 $btn-padding-x: 1.2rem;
+$btn-hover-bg-shade-amount: 15%;
+
+.btn {
+  background-color: $primary;
+  border-color: $primary;
+
+  &:hover {
+    background-color: color.adjust($primary, $lightness: -10%);
+    border-color: color.adjust($primary, $lightness: -10%);
+  }
+}
+
+/* Primary button fully themed */
+// $btn-primary-bg: $primary;
+// $btn-primary-border: $primary;
+// $btn-primary-color: #fff;
+
+// $btn-primary-hover-bg: darken($primary, 10%);
+// $btn-primary-hover-border: darken($primary, 10%);
+
+// /* Secondary button optional */
+// $btn-secondary-bg: $secondary;
+// $btn-secondary-border: $secondary;
+// $btn-secondary-color: #fff;
+
+// $btn-secondary-hover-bg: darken($secondary, 10%);
+// $btn-secondary-hover-border: darken($secondary, 10%);
 
 //Bootstrap Inputs
 $input-border-radius: 0.5rem;

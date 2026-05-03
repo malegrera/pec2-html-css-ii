@@ -12,31 +12,31 @@
 }
 
 .ponentes-card {
-  flex: 1 1 calc(33.333% - 1.5rem);
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
-
   display: flex;
+  flex: 1 1 100%;
   flex-direction: column;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 
   img {
     width: 100%;
     height: 200px;
+    margin-bottom: 1rem;
     object-fit: cover;
     border-radius: 4px;
-    margin-bottom: 1rem;
   }
 
   h2 {
-    font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    font-size: 1.2rem;
   }
 
   &__role {
+    margin-bottom: 0.5rem;
     font-weight: bold;
     color: $secondary;
-    margin-bottom: 0.5rem;
   }
 
   p {
@@ -49,18 +49,18 @@
 
   &:hover {
     transform: translateY(-5px);
-    transition: transform 0.3s;
   }
 }
 
-@container (max-width: 768px) {
+
+@container (min-width: 480px) {
   .ponentes-card {
     flex: 1 1 calc(50% - 1.5rem);
   }
 }
 
-@container (max-width: 480px) {
+@container (min-width: 768px) {
   .ponentes-card {
-    flex: 1 1 100%;
+     flex: 1 1 calc(33.333% - 1.5rem);
   }
 }

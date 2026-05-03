@@ -1,26 +1,31 @@
 .poster {
-  min-height: 100dvh;
-  padding: clamp(1rem, 4vw, 3rem);
-
-  /* MOBILE (base) */
+  /* Mobile first */
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
+  min-height: 100dvh;
+  padding: clamp(1rem, 4vw, 3rem);
+  container-type: inline-size;
+  color:  oklch(20% 0 0deg);
   background: linear-gradient(
     135deg,
-    oklch(75% 0.12 60),
-    oklch(55% 0.15 30)
-  );
-  color: #222;
+    oklch(75% 0.12 60deg),
+    oklch(92% 0.02 30deg)
+  );;
 }
 
-/* elementos base */
+.poster__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Elementos base */
 .poster__title {
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 800;
-  text-transform: uppercase;
   line-height: 1.1;
+  text-transform: uppercase;
 }
 
 .poster__date {
@@ -28,6 +33,7 @@
 }
 
 .poster__image img {
+  display: block;
   width: 100%;
   height: auto;
   border-radius: 1rem;
@@ -49,49 +55,54 @@
    ENHANCEMENT: GRID (desktop)
 ========================= */
 @supports (display: grid) {
-  @media (min-width: 768px) {
+  @media (width >= 768px) {
     .poster {
       display: grid;
+      grid-template-rows: auto auto auto auto auto;
       grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: auto 1fr auto;
       gap: 1.5rem;
-      align-items: center;
+      align-items: start;
+    }
+
+    .poster__container {
+      display: contents;
     }
 
     .poster__title {
-      grid-column: 1 / 9;
-      grid-row: 1;
-      font-size: clamp(3rem, 6vw, 5rem);
       z-index: 2;
+      grid-row: 1;
+      grid-column: 1 / 7;
+      font-size: clamp(3rem, 6vw, 5rem);
     }
 
     .poster__date {
+      grid-row: 2;
       grid-column: 1 / 6;
-      grid-row: 1;
-      align-self: end;
     }
 
     .poster__image {
+      grid-row: 1 / span 5;
       grid-column: 7 / -1;
-      grid-row: 1 / 4;
+      overflow: hidden;
+      border-radius: 1rem;
       transform: rotate(-2deg);
     }
 
     .poster__tagline {
+      grid-row: 3;
       grid-column: 1 / 6;
-      grid-row: 2;
       font-size: 1.2rem;
     }
 
     .poster__cta {
+      grid-row: 4;
       grid-column: 1 / 4;
-      grid-row: 3;
     }
 
     .poster__organizer {
+      grid-row: 5;
       grid-column: 1 / -1;
-      grid-row: 3;
-      justify-self: end;
+      justify-self: start;
     }
   }
 }
@@ -103,5 +114,18 @@
   .poster {
     display: flex;
     flex-direction: column;
+    min-height: 100dvh;
+  }
+}
+
+@container (min-width: 600px) {
+  .poster__tagline {
+    font-size: 1.25rem;
+  }
+}
+
+@layer layout {
+  .poster {
+    position: relative;
   }
 }
