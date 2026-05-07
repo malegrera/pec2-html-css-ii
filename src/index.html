@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html>
+<html lang="es">
 
 <head>
   <meta charset="utf-8" />
@@ -13,27 +13,30 @@
 <body>
   <include src="./views/header.html"></include>
   <main class="poster">
-    <div class="poster__container">
-    <h1 class="poster__title">Jornadas de Artesanía</h1>
+    <section class="poster__container">
+      <header class="poster__header">
+        <h1 class="poster__title">Jornadas de Artesanía</h1>
+        <p class="poster__date">12–14 Junio · Sevilla</p>
+      </header>
+      <figure class="poster__image">
+        <img src="assets/images/portada.jpg" alt="Imagen del parque donde se van a celebrar las jornadas"
+          loading="lazy">
+      </figure>
 
-    <p class="poster__date">12–14 Junio · Sevilla</p>
+      <p class="poster__tagline">
+        Talleres, charlas y experiencias con artesanos locales
+      </p>
 
-    <div class="poster__image">
-      <img src="assets/images/portada.jpg" alt="Artesanía en el parque" loading="lazy">
-    </div>
+      <a href="ponentes.html" 
+      class="poster__cta btn btn-primary btn-lg"
+      aria-label="Ver lista de los ponentes de las jornadas de artesanía">
+        Ver ponentes
+      </a>
 
-    <p class="poster__tagline">
-      Talleres, charlas y experiencias con artesanos locales
-    </p>
-
-    <a href="ponentes.html" class="poster__cta btn btn-primary btn-lg">
-      Ver ponentes
-    </a>
-
-    <p class="poster__organizer">
-      Organiza: Ayuntamiento
-    </p>
-    </div>
+      <p class="poster__organizer">
+        Organiza: Ayuntamiento
+      </p>
+    </section>
   </main>
   <include src="./views/footer.html"></include>
   <script type="module" src="./assets/scripts/main.js"></script>

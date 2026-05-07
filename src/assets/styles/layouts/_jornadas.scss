@@ -13,10 +13,8 @@
   }
 
   &__header {
-    &:has(.jornadas__meta) {
       padding-bottom: 1rem;
       border-bottom: 2px solid #eee;
-    }
   }
 
   &__title {
@@ -43,6 +41,10 @@
       margin-top: 0.5rem;
       font-size: 0.85rem;
       color: color-mix(in oklch, $dark 60%, $light);
+    }
+
+    &:has(figcaption) {
+        margin-bottom: 2rem;
     }
   }
 
@@ -77,7 +79,8 @@
   }
 }
 
-/* Container query obligatorio */
+
+/* Container query */
 @container (max-width: 37.5rem) {
   .jornadas {
     padding: 1rem;

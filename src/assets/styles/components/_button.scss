@@ -1,0 +1,9 @@
+.btn {
+  background-color: $primary;
+  border-color: $primary;
+
+  &:hover {
+    background-color: color.adjust($primary, $lightness: -10%);
+    border-color: color.adjust($primary, $lightness: -10%);
+  }
+}

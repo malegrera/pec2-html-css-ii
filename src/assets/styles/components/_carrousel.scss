@@ -1,0 +1,18 @@
+// Variables personalizadas
+$carousel-control-color: #fff;
+$carousel-indicator-active-bg: #c59d5f; // tono artesanal
+
+.actividades__galeria {
+  max-width: 900px;
+  margin: 0 auto;
+
+  .carousel {
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  img {
+    height: 400px;
+    object-fit: cover;
+  }
+}

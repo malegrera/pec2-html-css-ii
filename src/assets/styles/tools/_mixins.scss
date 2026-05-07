@@ -1,15 +1,6 @@
 @use "../variables" as *;
 @use "sass:map";
 
-// Mixin para media queries
-@mixin respond($device) {
-  $size: map.get($breakpoints, $device);
-
-  @media (min-width: $size) {
-    @content;
-  }
-}
-
 @mixin container($size) {
   @container (max-width: $size) {
     @content;

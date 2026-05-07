@@ -12,68 +12,106 @@
 
 <body>
   <include src="./views/header.html"></include>
-<main class="actividades">
+  <main class="actividades">
 
-  <!-- 🧩 TALLERES -->
-  <section class="actividades__talleres">
-    <h1>Talleres artesanales</h1>
-    <p>Explora las actividades prácticas de las jornadas.</p>
+    <!-- TALLERES -->
+    <section class="actividades__talleres">
+      <h1>Talleres artesanales</h1>
+      <p>Explora las actividades prácticas de las jornadas.</p>
 
-    <div class="actividades__grid">
-      <article class="actividades-card">
-        <img src="./assets/images/ceramica.jpg" alt="">
-        <h2>Cerámica</h2>
-        <p>Modelado y cocción tradicional.</p>
-      </article>
+      <div class="actividades__grid">
+        <article class="actividades-card">
+          <img src="./assets/images/g1.jpg" alt="">
+          <h2>Cerámica</h2>
+          <p>Modelado y cocción tradicional.</p>
+        </article>
 
-      <article class="actividades-card">
-        <img src="./assets/images/forja.jpg" alt="">
-        <h2>Forja</h2>
-        <p>Trabajo artesanal con metales.</p>
-      </article>
+        <article class="actividades-card">
+          <img src="./assets/images/g2.jpg" alt="">
+          <h2>Forja</h2>
+          <p>Trabajo artesanal con metales.</p>
+        </article>
 
-      <article class="actividades-card">
-        <img src="./assets/images/textil.jpg" alt="">
-        <h2>Textil</h2>
-        <p>Tejido manual con fibras naturales.</p>
-      </article>
+        <article class="actividades-card">
+          <img src="./assets/images/g3.jpg" alt="">
+          <h2>Textil</h2>
+          <p>Tejido manual con fibras naturales.</p>
+        </article>
 
-      <article class="actividades-card">
-        <img src="./assets/images/madera.jpg" alt="">
-        <h2>Madera</h2>
-        <p>Carpintería tradicional.</p>
-      </article>
-    </div>
-  </section>
+        <article class="actividades-card">
+          <img src="./assets/images/g4.jpg" alt="">
+          <h2>Madera</h2>
+          <p>Carpintería tradicional.</p>
+        </article>
 
-  <!-- 🖼️ GALERÍA -->
-  <section class="actividades__galeria">
-    <h2>Galería</h2>
+      </div>
+    </section>
 
-    <div class="actividades__galeria-grid">
-      <img src="./assets/images/g1.jpg" alt="">
-      <img src="./assets/images/g2.jpg" alt="">
-      <img src="./assets/images/g3.jpg" alt="">
-      <img src="./assets/images/g4.jpg" alt="">
-    </div>
-  </section>
+    <!-- Galería de imágenes -->
+    <section class="actividades__galeria">
+      <h2>Galería</h2>
 
-  <!-- Formulario de contacto -->
-  <section class="actividades__contacto">
-    <h2>Contacto</h2>
+      <div id="galeriaCarousel" class="carousel slide" data-bs-ride="carousel">
 
-    <form name="contacto" method="post" data-netlify="true" class="actividades__form">
-      <input class="form-control" type="hidden" name="form-name" value="contacto">
+        <!-- indicadores -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#galeriaCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#galeriaCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#galeriaCarousel" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#galeriaCarousel" data-bs-slide-to="3"></button>
+          <button type="button" data-bs-target="#galeriaCarousel" data-bs-slide-to="4"></button>
 
-      <input class="form-control" type="text" name="nombre" placeholder="Nombre" required>
-      <input class="form-control" type="email" name="email" placeholder="Email" required>
-      <textarea class="form-control" name="mensaje" placeholder="Mensaje" required></textarea>
+        </div>
 
-      <button class="btn btn-primary w-100">Enviar</button>
-    </form>
-  </section>
+        <!-- slides -->
+        <div class="carousel-inner">
 
-</main>
+          <div class="carousel-item active">
+            <img src="./assets/images/ceramica.jpg" class="d-block w-100" alt="Artesanía 1">
+          </div>
+
+          <div class="carousel-item">
+            <img src="./assets/images/forja.jpg" class="d-block w-100" alt="Artesanía 2">
+          </div>
+
+          <div class="carousel-item">
+            <img src="./assets/images/textil.jpg" class="d-block w-100" alt="Artesanía 3">
+          </div>
+
+          <div class="carousel-item">
+            <img src="./assets/images/madera.jpg" class="d-block w-100" alt="Artesanía 4">
+          </div>
+
+        </div>
+
+        <!-- controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#galeriaCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#galeriaCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- Formulario de contacto -->
+    <section class="actividades__contacto">
+      <h2>Contacto</h2>
+
+      <form name="contacto" method="post" data-netlify="true" class="actividades__form">
+        <input class="form-control" type="hidden" name="form-name" value="contacto">
+
+        <input class="form-control" type="text" name="nombre" placeholder="Nombre" required>
+        <input class="form-control" type="email" name="email" placeholder="Email" required>
+        <textarea class="form-control" name="mensaje" placeholder="Mensaje" required></textarea>
+
+        <button class="btn btn-primary w-100">Enviar</button>
+      </form>
+    </section>
+
+  </main>
   <include src="./views/footer.html"></include>
   <script type="module" src="./assets/scripts/main.js"></script>
   <!-- do not remove this line! -->
