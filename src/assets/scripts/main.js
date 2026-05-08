@@ -22,3 +22,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact");
+  const alertBox = document.getElementById("formAlert");
+
+  if (!form || !alertBox) return;
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault(); 
+
+    if (!form.checkValidity()) return;
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        alertBox.classList.remove("d-none");
+        alertBox.scrollIntoView({ behavior: "smooth" });
+        form.reset();
+      } else {
+        alert("Error al enviar el formulario");
+      }
+    } catch (error) {
+      alert("Error de red");
+    }
+  });
+});

@@ -127,7 +127,7 @@
         <div class="col-12 col-md-8 col-lg-6">
           <h2>Contacto</h2>
 
-          <form name="contacto" method="post" data-netlify="true" class="actividades__form">
+          <form name="contacto" method="post" data-netlify="true" class="actividades__form" id="contact">
             <input class="form-control" type="hidden" name="form-name" value="contacto">
             <input class="form-control" type="text" name="nombre" placeholder="Nombre" required>
             <input class="form-control" type="email" name="email" placeholder="Email" required>
@@ -135,6 +135,9 @@
 
             <button class="btn btn-primary w-100">Enviar</button>
           </form>
+          <div id="formAlert" class="alert alert-success mt-3 d-none" role="alert">
+            ¡Mensaje enviado correctamente! Gracias por contactarnos.
+          </div>
         </div>
       </div>
     </section>
