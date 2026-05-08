@@ -25,9 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contact");
-  const alertBox = document.getElementById("formAlert");
+  const msgAlert = document.getElementById("formToast");
 
-  if (!form || !alertBox) return;
+  if (!form || !msgAlert) return;
+
+   const toast = new bootstrap.Toast(msgAlert);
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault(); 
@@ -43,14 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (response.ok) {
-        alertBox.classList.remove("d-none");
-        alertBox.scrollIntoView({ behavior: "smooth" });
+          toast.show(); 
         form.reset();
       } else {
-        alert("Error al enviar el formulario");
+         console.error("Error al enviar:", response.status);
       }
     } catch (error) {
-      alert("Error de red");
+         console.error("Error de red:", error);
     }
   });
 });

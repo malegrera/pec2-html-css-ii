@@ -135,14 +135,21 @@
 
             <button class="btn btn-primary w-100">Enviar</button>
           </form>
-          <div id="formAlert" class="alert alert-success mt-3 d-none" role="alert">
-            ¡Mensaje enviado correctamente! Gracias por contactarnos.
-          </div>
         </div>
       </div>
     </section>
 
   </main>
+   <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="formToast" class="toast align-items-center text-bg-dark border-0" role="alert">
+      <div class="d-flex">
+        <div class="toast-body">
+           ¡Mensaje enviado correctamente! Gracias por contactarnos.
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
   <include src="./views/footer.html"></include>
   <script type="module" src="./assets/scripts/main.js"></script>
   <!-- do not remove this line! -->
