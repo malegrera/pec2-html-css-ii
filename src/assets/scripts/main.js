@@ -8,6 +8,7 @@
 import "bootstrap";
 import "@fontsource/itim";
 import "@fontsource/inder";
+import "bootstrap-icons/font/bootstrap-icons.css";
 /**
  * Write any other JavaScript below
  */
