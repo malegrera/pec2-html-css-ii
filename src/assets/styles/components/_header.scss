@@ -4,6 +4,11 @@
   background-color: $primary;
 }
 
+.header__logo {
+  width: auto;
+  height: clamp(2.2rem, 2rem + 0.8vw, 3.2rem);
+}
+
 /* NAVBAR */
 .header__nav {
   padding-block: 0.75rem;
@@ -16,9 +21,11 @@
   font-weight: 700;
   line-height: 1.2;
   color: white;
-    white-space: normal; //permite salto de línea
+  white-space: normal; 
   text-decoration: none;
 }
+
+
 
 /* MENU */
 .header__menu {
