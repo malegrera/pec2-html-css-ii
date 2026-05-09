@@ -71,16 +71,17 @@
       margin-bottom: 0.5rem;
     }
 
-    li:has(i.bi) {
-      display: flex;
-      gap: 0.5rem;
-      align-items: flex-start;
-    }
+    // li:has(.bi) {
+    //   display: flex;
+    //   gap: 0.5rem;
+    //   align-items: flex-start;
+    // }
 
-    li i.bi {
-      margin-top: 0.2rem;
-      color: $secondary;
-    }
+    // li .bi {
+    //   flex-shrink: 0;
+    //   margin-top: 0.2rem;
+    //   color: $secondary;
+    // }
   }
 
   &__footer-note {
