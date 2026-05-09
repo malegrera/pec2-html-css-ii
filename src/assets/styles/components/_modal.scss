@@ -1,0 +1,11 @@
+@use "../variables" as *;
+@use "sass:color";
+
+.modal-header {
+  background-color: color.adjust($primary, $lightness: 20%);
+  border-color: $primary;
+}
+
+.modal-body p:first-child {
+    color: $secondary;
+}

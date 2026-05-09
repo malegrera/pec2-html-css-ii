@@ -13,6 +13,8 @@ import "@fontsource/inder";
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  //nav
   const links = document.querySelectorAll("nav a");
   const currentPage = location.pathname.split("/").pop();
 
@@ -21,37 +23,26 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add("active");
     }
   });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contact");
-  const msgAlert = document.getElementById("formToast");
+  //modal
+ const modal = document.getElementById("artesanoModal");
 
-  if (!form || !msgAlert) return;
+  if (modal) {
 
-   const toast = new bootstrap.Toast(msgAlert);
+    modal.addEventListener("show.bs.modal", (event) => {
 
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault(); 
+      const button = event.relatedTarget;
+      const name = button.dataset.name;
+      const role = button.dataset.role;
+      const description = button.dataset.description;
+      document.getElementById("modalTitle").textContent = name;
+      document.getElementById("modalRole").textContent = role;
+      document.getElementById("modalDescription").textContent = description;
+    });
 
-    if (!form.checkValidity()) return;
+  }
 
-    const formData = new FormData(form);
 
-    try {
-      const response = await fetch("/", {
-        method: "POST",
-        body: formData,
-      });
 
-      if (response.ok) {
-          toast.show(); 
-        form.reset();
-      } else {
-         console.error("Error al enviar:", response.status);
-      }
-    } catch (error) {
-         console.error("Error de red:", error);
-    }
-  });
+
 });
