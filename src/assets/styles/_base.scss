@@ -31,3 +31,8 @@ img {
   display: block;
   max-width: 100%;
 }
+
+:is(.jornadas__title, .ponentes__title, .actividades h1) {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}

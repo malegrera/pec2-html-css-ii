@@ -7,3 +7,8 @@
     border-color: color.adjust($primary, $lightness: -10%);
   }
 }
+
+:is(.btn-primary, .btn-outline-primary) {
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
