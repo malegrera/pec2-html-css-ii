@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //modal
- const modal = document.getElementById("artesanoModal");
+  const modal = document.getElementById("artesanoModal");
 
   if (modal) {
 
@@ -36,9 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const name = button.dataset.name;
       const role = button.dataset.role;
       const description = button.dataset.description;
+      const taller = button.dataset.taller;
       document.getElementById("modalTitle").textContent = name;
       document.getElementById("modalRole").textContent = role;
       document.getElementById("modalDescription").textContent = description;
+      document.getElementById("modalTaller").textContent = taller;
+
     });
 
   }
