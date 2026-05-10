@@ -129,16 +129,35 @@
     <section class="actividades__contacto container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6">
+
           <h2>Contacto</h2>
 
-          <form name="contacto" method="post" data-netlify="true" class="actividades__form">
-            <input class="form-control" type="hidden" name="form-name" value="contacto">
-            <input class="form-control" type="text" name="nombre" placeholder="Nombre" required>
-            <input class="form-control" type="email" name="email" placeholder="Email" required>
-            <textarea class="form-control" name="mensaje" placeholder="Mensaje" required></textarea>
+          <form name="contacto" method="post" data-netlify="true" class="actividades__form"
+            aria-label="Formulario de contacto">
 
-            <button class="btn btn-primary w-100"><i class="bi bi-send"></i> Enviar</button>
+            <input type="hidden" name="form-name" value="contacto">
+
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input id="nombre" class="form-control" type="text" name="nombre" required autocomplete="name">
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input id="email" class="form-control" type="email" name="email" required autocomplete="email">
+            </div>
+
+            <div class="mb-3">
+              <label for="mensaje" class="form-label">Mensaje</label>
+              <textarea id="mensaje" class="form-control" name="mensaje" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+              <i class="bi bi-send"></i> Enviar
+            </button>
+
           </form>
+
         </div>
       </div>
     </section>
