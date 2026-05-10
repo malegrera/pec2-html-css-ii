@@ -4,16 +4,18 @@
 
 // Mixin para container
 @mixin container-up($size) {
+  $breakpoint: breakpoint($size);
 
-  @container (min-width: breakpoint($size)) {
+  @container (min-width: #{$breakpoint}) {
     @content;
   }
 }
 
 // Mixin para media queries
 @mixin media-up($size) {
+  $breakpoint: breakpoint($size);
 
-  @media (min-width: breakpoint($size)) {
+  @media (min-width: #{$breakpoint}) {
     @content;
   }
 }
