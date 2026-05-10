@@ -16,7 +16,7 @@
   }
 
   .header__brand {
-    max-width: 70vw;
+    max-width: 40ch;
     margin: 0;
     font-size: clamp(1rem, 1.5vw, 1.5rem);
     font-weight: 700;
@@ -68,7 +68,7 @@
     height: auto;
   }
 
-  @include container-up(tablet) {
+  @include container-up(md) {
     .header__brand {
       max-width: none;
       white-space: nowrap;

@@ -13,7 +13,7 @@
     flex-direction: column;
     gap: 2rem;
     align-items: center;
-    padding: 2rem 0;
+    padding:  clamp(1.5rem, 3vw, 2.5rem) 0;
     text-align: center;
   }
 
@@ -24,13 +24,13 @@
 
   &__logo img {
     width: auto;
-    height: 40px;
+    height:  clamp(32px, 4vw, 40px);
   }
 
   &__nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: clamp(0.75rem, 1.5vw, 1rem);
     justify-content: center;
     padding: 0;
     margin: 0;
@@ -71,7 +71,7 @@
     border-top: 1px solid #444;
   }
 
-  @include container-up(tablet) {
+  @include container-up(md) {
     &__content {
       flex-direction: row;
       align-items: center;

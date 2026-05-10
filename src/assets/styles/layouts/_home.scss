@@ -12,14 +12,14 @@
 }
 
 @supports (display: grid) {
-   .poster {
+  .poster {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
     align-items: start;
   }
 
-.poster__container {
+  .poster__container {
     display: grid;
     grid-template-areas:
       "header"
@@ -31,7 +31,7 @@
     gap: 1rem;
   }
 
-    .poster__header {
+  .poster__header {
     grid-area: header;
   }
 
@@ -44,7 +44,6 @@
   }
 
   .poster__cta {
-    grid-area: cta;
     width: fit-content;
   }
 
@@ -60,24 +59,20 @@
   }
 
   @layer components {
-  .poster__header {
-    display: inherit;
-  }
-  
-  .poster__title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    line-height: 1.1;
-    text-transform: uppercase;
+    .poster__header {
+      display: inherit;
+    }
+
+    .poster__title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
   }
 
-  .poster__cta {
-    width: fit-content;
-  }
-}
 
-
- @layer utilities {
+  @layer utilities {
     .poster__date {
       font-size: 1rem;
     }
@@ -94,8 +89,8 @@
       font-size: 0.9rem;
     }
   }
-  
-  @include media-up(tablet) {
+
+  @include media-up(md) {
     .poster {
       grid-template-rows: auto auto auto auto auto;
       grid-template-columns: repeat(10, 1fr);
@@ -161,7 +156,7 @@
 }
 
 // Container query
-@include container-up(tablet) {
+@include container-up(md) {
   .poster__tagline {
     font-size: 1.25rem;
   }

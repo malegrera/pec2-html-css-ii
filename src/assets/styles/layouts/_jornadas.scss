@@ -82,13 +82,13 @@
 
   //container queries
 
-  @include container-up(mobile) {
+  @include container-up(sm) {
     &__title {
       font-size: 1.8rem;
     }
   }
 
-  @include container-up(tablet) {
+  @include container-up(md) {
     padding: 2rem;
 
     &__title {
