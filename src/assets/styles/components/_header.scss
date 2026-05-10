@@ -1,74 +1,85 @@
 @use "../variables" as *;
+@use "../tools/mixins" as *;
 
 .header {
+  container-type: inline-size;
   background-color: $primary;
-}
-
-.header__logo {
-  width: auto;
-  height: clamp(2.2rem, 2rem + 0.8vw, 3.2rem);
-}
-
-/* NAVBAR */
-.header__nav {
-  padding-block: 0.75rem;
-}
-
-.header__brand {
-  max-width: 70vw;
-  margin: 0;
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
-  font-weight: 700;
-  line-height: 1.2;
-  color: white;
-  white-space: normal; 
-  text-decoration: none;
-}
 
 
+  .header__logo {
+    width: auto;
+    height: clamp(2.2rem, 2rem + 0.8vw, 3.2rem);
+  }
 
-/* MENU */
-.header__menu {
-  gap: 0.5rem;
+  .header__nav {
+    padding-block: 0.75rem;
+  }
 
-  .nav-link {
-    font-weight: 500;
+  .header__brand {
+    max-width: 70vw;
+    margin: 0;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.2;
     color: white;
-    transition: opacity 0.2s ease;
+    white-space: normal;
+    text-decoration: none;
+  }
 
-    &:is(:hover, :focus-visible) {
-      text-decoration: underline;
-      opacity: 0.9;
-    }
+  .header__menu {
+    gap: 0.5rem;
 
-    &.active {
-      font-weight: 600;
-      text-decoration: underline;
+    .nav-link {
+      font-weight: 500;
+      color: white;
+      transition: opacity 0.2s ease;
+
+      &:is(:hover, :focus-visible) {
+        text-decoration: underline;
+        opacity: 0.9;
+      }
+
+      &.active {
+        font-weight: 600;
+        text-decoration: underline;
+      }
     }
   }
-}
 
-/* HAMBURGER */
-.navbar-toggler {
-  font-size: 1.5rem;
-  color: white;
-  border: none;
+  .navbar-toggler {
+    font-size: 1.5rem;
+    color: white;
+    border: none;
 
-  &:focus {
-    box-shadow: none;
+    &:focus {
+      box-shadow: none;
+    }
   }
-}
 
-/* LOGO + TÍTULO */
+  .header__branding {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    min-width: 0;
+  }
 
-.header__branding {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  min-width: 0;
-}
+  .header__branding img {
+    width: clamp(32px, 6vw, 60px);
+    height: auto;
+  }
 
-.header__branding img {
-  width: clamp(32px, 6vw, 60px);
-  height: auto;
+  @include container-up(tablet) {
+    .header__brand {
+      max-width: none;
+      white-space: nowrap;
+    }
+
+    .header__menu {
+      gap: 1rem;
+    }
+
+    .header__branding {
+      gap: 1rem;
+    }
+  }
 }

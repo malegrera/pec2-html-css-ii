@@ -4,7 +4,7 @@
  */
 
 /**
- * Import variables and mixins first
+ * Import variables, mixins and functions
  */
 @use "variables";
 @use "tools/mixins";
@@ -14,8 +14,6 @@
  * Import dependencies
  */
 @use "dependencies";
-
-
 
 /**
  * Import base styles
@@ -32,7 +30,6 @@
 
 /**
  * Import layouts
- * It's a best practice to use a different partial for each page
  */
 @use "layouts/home";
 @use "layouts/artesanos";

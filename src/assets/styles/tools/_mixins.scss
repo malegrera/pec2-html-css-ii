@@ -1,45 +1,21 @@
 @use "../variables" as *;
-@use "sass:map";
+@use "./functions" as *;
 
-@mixin container($size) {
-  @container (max-width: $size) {
+
+// Mixin para container
+@mixin container-up($size) {
+  $breakpoint: breakpoint($size);
+
+  @container (min-width: #{$breakpoint}) {
     @content;
   }
 }
 
-@mixin grid($cols: 12, $gap: 1rem, $align: stretch) {
-  display: grid;
-  grid-template-columns: repeat($cols, 1fr);
-  gap: $gap;
-  align-items: $align;
-}
+// Mixin para media queries
+@mixin media-up($size) {
+  $breakpoint: breakpoint($size);
 
-@mixin flex-center($direction: row) {
-  display: flex;
-  flex-direction: $direction;
-  align-items: center;
-  justify-content: center;
-}
-
-@mixin button-style($bg, $color) {
-  padding: 0.6rem 1.2rem;
-  color: $color;
-  cursor: pointer;
-  background: $bg;
-  border: none;
-  border-radius: 0.5rem;
-  transition: 0.3s;
-
-  &:hover {
-    opacity: 0.85;
+  @media (min-width: #{$breakpoint}) {
+    @content;
   }
-}
-
-@mixin card {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 5%);
 }

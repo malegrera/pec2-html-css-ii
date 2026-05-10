@@ -1,5 +1,6 @@
 @use "variables" as *;
 @use "./tools/functions" as *;
+@use "sass:color";
 
 html,
 body {
@@ -14,7 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: $font-family-base;
-  background-color: bg-soft($primary, 50%);
+  background-color: color.mix(white, $primary, 50%);
 }
 
 h1, h2, h3, h4 {
@@ -32,7 +33,7 @@ img {
   max-width: 100%;
 }
 
-:is(.jornadas__title, .ponentes__title, .actividades h1) {
+:is(.jornadas__title, .ponentes__title, .actividades__title) {
   font-weight: 600;
   letter-spacing: 0.2px;
 }

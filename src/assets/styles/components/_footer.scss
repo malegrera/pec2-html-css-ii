@@ -1,10 +1,9 @@
 @use "../variables" as *;
+@use "../tools/mixins" as *;
 @use "sass:color";
 
 .footer {
   width: 100%;
-
-  /* ACTIVAMOS CONTAINER QUERIES */
   container-type: inline-size;
   color: #eee;
   background-color: #222;
@@ -18,25 +17,6 @@
     text-align: center;
   }
 
-  /* CUANDO EL FOOTER ES MÁS GRANDE, PASA A 3 COLUMNAS */
-  @container (min-width: 700px) {
-    .footer__content {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      text-align: left;
-    }
-
-    .footer__left {
-      justify-content: flex-start;
-    }
-
-    .footer__right {
-      text-align: right;
-    }
-  }
-
-  /* IZQUIERDA */
   &__left {
     display: flex;
     justify-content: center;
@@ -47,7 +27,6 @@
     height: 40px;
   }
 
-  /* CENTRO */
   &__nav {
     display: flex;
     flex-wrap: wrap;
@@ -67,7 +46,7 @@
     }
   }
 
-  /* DERECHA */
+
   &__social {
     display: flex;
     gap: 1rem;
@@ -90,5 +69,22 @@
     padding: 1rem;
     text-align: center;
     border-top: 1px solid #444;
+  }
+
+  @include container-up(tablet) {
+    &__content {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    &__left {
+      justify-content: flex-start;
+    }
+
+    &__right {
+      text-align: right;
+    }
   }
 }

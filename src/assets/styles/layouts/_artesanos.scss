@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "../tools/mixins" as *;
 
 .ponentes {
   padding: 2rem;
@@ -20,7 +21,7 @@
   border-radius: 8px;
   transition: transform 0.3s ease;
 
-  img {
+  &__img {
     width: 100%;
     height: 200px;
     margin-bottom: 1rem;
@@ -28,7 +29,7 @@
     border-radius: 4px;
   }
 
-  h2 {
+  &__title {
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
   }
@@ -39,28 +40,32 @@
     color: $secondary;
   }
 
-  p {
+  &__text {
     font-size: 0.95rem;
   }
 
-  button {
+  &__button {
     margin-top: auto;
   }
 
-  &:hover {
-    transform: translateY(-5px);
+ &:hover {
+    transform: translateY(-0.5rem) scale(1.01);
+  }
+
+  &:has(.ponentes-card__img:hover) {
+      outline: 2px solid rgb(0 0 0 / 10%);
   }
 }
 
 
-@container (min-width: 480px) {
+@include container-up(mobile) {
   .ponentes-card {
     flex: 1 1 calc(50% - 1.5rem);
   }
 }
 
-@container (min-width: 768px) {
+@include container-up(tablet) {
   .ponentes-card {
-     flex: 1 1 calc(33.333% - 1.5rem);
+    flex: 1 1 calc(33.333% - 1.5rem);
   }
 }

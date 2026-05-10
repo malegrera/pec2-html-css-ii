@@ -1,13 +1,14 @@
 @use "../variables" as *;
+@use "../tools/mixins" as *;
 
 .jornadas {
-  padding: clamp(1rem, 3vw, 2rem);
+  padding: clamp(1rem, 3vw, 2rem); 
   container-type: inline-size;
 
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     max-width: 70ch;
     margin: 0 auto;
   }
@@ -18,7 +19,7 @@
   }
 
   &__title {
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: 1.5rem;
     line-height: 1.2;
   }
 
@@ -70,18 +71,6 @@
     li {
       margin-bottom: 0.5rem;
     }
-
-    // li:has(.bi) {
-    //   display: flex;
-    //   gap: 0.5rem;
-    //   align-items: flex-start;
-    // }
-
-    // li .bi {
-    //   flex-shrink: 0;
-    //   margin-top: 0.2rem;
-    //   color: $secondary;
-    // }
   }
 
   &__footer-note {
@@ -90,16 +79,24 @@
     color: color-mix(in oklch, $dark 50%, $light);
     border-top: 1px solid #eee;
   }
-}
 
+  //container queries
 
-/* Container query */
-@container (max-width: 37.5rem) {
-  .jornadas {
-    padding: 1rem;
+  @include container-up(mobile) {
+    &__title {
+      font-size: 1.8rem;
+    }
+  }
+
+  @include container-up(tablet) {
+    padding: 2rem;
 
     &__title {
-      font-size: 1.5rem;
+      font-size: 2rem;
+    }
+
+    &__content {
+      gap: 1.5rem;
     }
   }
 }

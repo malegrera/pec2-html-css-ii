@@ -1,14 +1,6 @@
 @use "../variables" as *;
-@use "sass:color";
+@use "sass:map";
 
-@function bg-soft($color, $amount: 80%) {
-  @return color.mix(white, $color, $amount);
-}
-
-@function color-alpha($color, $alpha) {
-  @return color.adjust($color, $alpha: $alpha);
-}
-
-@function spacing($multiplier, $base: 0.5rem) {
-  @return $multiplier * $base;
+@function breakpoint($size) {
+  @return map.get($breakpoints, $size);
 }

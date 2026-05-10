@@ -1,3 +1,6 @@
+@use "../variables" as *;
+@use "../tools/mixins" as *;
+
 .poster {
   min-height: 100dvh;
   padding: clamp(1rem, 4vw, 3rem);
@@ -6,10 +9,8 @@
   background: linear-gradient(135deg,
       oklch(75% 0.12 60deg),
       oklch(92% 0.02 30deg));
-  ;
 }
 
-/*  GRID (desktop) */
 @supports (display: grid) {
    .poster {
     display: grid;
@@ -94,9 +95,8 @@
     }
   }
   
-  @media (width >=768px) {
+  @include media-up(tablet) {
     .poster {
-      display: grid;
       grid-template-rows: auto auto auto auto auto;
       grid-template-columns: repeat(10, 1fr);
       gap: 1rem;
@@ -160,9 +160,22 @@
   }
 }
 
-/* Container query */
-@container (min-width: 600px) {
+// Container query
+@include container-up(tablet) {
   .poster__tagline {
     font-size: 1.25rem;
+  }
+
+  .poster__title {
+    font-size: clamp(2rem, 4vw, 4rem);
+  }
+
+  .poster__cta {
+    transform: scale(1.05);
+  }
+
+  .poster__date,
+  .poster__locate {
+    font-size: 1.1rem;
   }
 }
