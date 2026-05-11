@@ -2,7 +2,6 @@
 @use "../tools/mixins" as *;
 @use "../tools/functions" as *;
 
-@layer components {
   .actividades {
     padding: clamp(1rem, 3vw, 3rem);
     container-type: inline-size;
@@ -101,4 +100,3 @@
       }
     }
   }
-}

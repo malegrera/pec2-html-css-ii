@@ -1,6 +1,9 @@
 @use "variables" as *;
 @use "sass:color";
 
+@layer base, components, utilities;
+
+@layer base {
 html,
 body {
   padding: 0;
@@ -31,8 +34,11 @@ img {
   max-width: 100%;
   height: auto;
 }
+}
 
+@layer utilities {
 :is(.jornadas__title, .ponentes__title, .actividades__title) {
   font-weight: 600;
   letter-spacing: 0.02em;
+}
 }
