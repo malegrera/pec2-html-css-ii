@@ -27,30 +27,29 @@
     text-decoration: none;
   }
 
-  .header__menu {
+  &__menu {
     gap: spacing(1);
-
-    .nav-link {
-      font-weight: 500;
-      color: $light;
-      transition: opacity 0.2s ease;
-
-      &:is(:hover, :focus-visible) {
-        text-decoration: underline;
-        opacity: 0.9;
-      }
-
-      &.active {
-        font-weight: 600;
-        text-decoration: underline;
-      }
-    }
   }
 
+  &__link {
+    font-weight: 500;
+    color: $light;
+    transition: opacity 0.2s ease;
 
-  .navbar-toggler {
+    &:is(:hover, :focus-visible) {
+      text-decoration: underline;
+      opacity: 0.9;
+    }
+
+&__link--active {
+  font-weight: 600;
+  text-decoration: underline;
+}
+  }
+
+  &__toggler {
     font-size: 1.5rem;
-    color: white;
+    color: $light;
     border: none;
 
     &:focus {
@@ -69,8 +68,6 @@
       height: auto;
     }
   }
-
-
 
   @include container-up(md) {
     &__brand {
