@@ -1,5 +1,6 @@
 @use "../variables" as *;
 @use "../tools/mixins" as *;
+@use "../tools/functions" as *;
 
 .header {
   container-type: inline-size;
@@ -12,7 +13,7 @@
   }
 
   .header__nav {
-    padding-block: 0.75rem;
+    padding-block: spacing(1.5);
   }
 
   .header__brand {
@@ -27,7 +28,7 @@
   }
 
   .header__menu {
-    gap: 0.5rem;
+    gap: spacing(1);
 
     .nav-link {
       font-weight: 500;
@@ -58,7 +59,7 @@
 
   .header__branding {
     display: flex;
-    gap: 0.5rem;
+    gap: spacing(1);
     align-items: center;
     min-width: 0;
   }
@@ -75,11 +76,11 @@
     }
 
     .header__menu {
-      gap: 1rem;
+      gap: spacing(2);
     }
 
     .header__branding {
-      gap: 1rem;
+      gap: spacing(2);
     }
   }
 }

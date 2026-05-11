@@ -1,6 +1,9 @@
 @use "../variables" as *;
 @use "../dependencies" as *;
 @use "../tools/mixins" as *;
+@use "../tools/functions" as *;
+
+@layer base, component, utilities;
 
 .poster {
   min-height: 100dvh;
@@ -12,11 +15,12 @@
       oklch(92% 0.02 30deg));
 }
 
+//soporta grid
 @supports (display: grid) {
   .poster {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: spacing(2);
     align-items: start;
   }
 
@@ -45,6 +49,7 @@
   }
 
   .poster__cta {
+    grid-area: cta;
     width: fit-content;
   }
 
@@ -56,6 +61,7 @@
     display: block;
     width: 100%;
     height: auto;
+    object-fit: cover;
     border-radius: 1rem;
   }
 
@@ -69,6 +75,10 @@
       font-weight: 800;
       line-height: 1.1;
       text-transform: uppercase;
+    }
+
+    .poster__cta {
+      width: fit-content;
     }
   }
 
@@ -91,11 +101,11 @@
     }
   }
 
-   @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(md) {
     .poster {
       grid-template-rows: auto auto auto auto auto;
       grid-template-columns: repeat(10, 1fr);
-      gap: 1rem;
+      gap: spacing(2);
       align-items: start;
     }
 
@@ -115,7 +125,7 @@
       grid-column: 1 / 6;
     }
 
-    .poster__locate {
+    .poster__location {
       grid-row: 3;
       grid-column: 1 / 6;
     }
@@ -123,6 +133,7 @@
     .poster__image {
       grid-row: 1 / span 5;
       grid-column: 7 / -1;
+      justify-self: stretch;
       overflow: hidden;
       border-radius: 1rem;
       transform: rotate(-2deg);
@@ -140,14 +151,14 @@
     }
 
     .poster__organizer {
-      grid-row: 6;
+      grid-row: 5;
       grid-column: 1 / -1;
       justify-self: start;
     }
   }
 }
 
-/* Sin grid */
+// sin grid
 @supports not (display: grid) {
   .poster {
     display: flex;
