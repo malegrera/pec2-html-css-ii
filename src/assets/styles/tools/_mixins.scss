@@ -11,11 +11,3 @@
   }
 }
 
-// Mixin para media queries
-@mixin media-up($size) {
-  $breakpoint: breakpoint($size);
-
-  @media (min-width: #{$breakpoint}) {
-    @content;
-  }
-}

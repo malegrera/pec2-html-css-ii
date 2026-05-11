@@ -1,6 +1,10 @@
-@use "../variables" as *;
+@use "../dependencies" as *;
 @use "sass:map";
 
 @function breakpoint($size) {
-  @return map.get($breakpoints, $size);
+  @return map.get($grid-breakpoints, $size);
+}
+
+@function spacing($multiplier, $base: 0.5rem) {
+  @return $multiplier * $base;
 }
