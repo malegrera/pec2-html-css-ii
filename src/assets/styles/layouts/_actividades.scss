@@ -2,65 +2,39 @@
 @use "../tools/mixins" as *;
 @use "../tools/functions" as *;
 
-.actividades {
-  padding: clamp(1rem, 3vw, 3rem);
-  container-type: inline-size;
+@layer components {
+  .actividades {
+    padding: clamp(1rem, 3vw, 3rem);
+    container-type: inline-size;
 
 
-  & h1,
-  & h2 {
-    margin-bottom: spacing(2);
-  }
-
-  &__grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: spacing(3);
-  }
-
-  &__galeria-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: spacing(1);
-
-    img {
-      width: 100%;
-      height:  auto;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      border-radius: 0.375rem;
+    & h1,
+    & h2 {
+      margin-bottom: spacing(2);
     }
-  }
 
-  &__form {
-    display: flex;
-    flex-direction: column;
-    gap: spacing(2);
-    max-width: 30rem;
+    &__grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: spacing(3);
+    }
 
-    input,
-    textarea {
-      padding: spacing(1);
-      border: 1px solid #ccc;
-      border-radius: 0.25rem;
+    &__card {
+      display: flex;
+      flex: 1 1 100%;
+      flex-direction: column;
+      padding: spacing(2);
+      background: white;
+      border-radius: 0.5rem;
+      transition: 0.3s;
 
-      &:focus {
-        outline: none;
-        border-color: $accent;
+      &:hover {
+        transform: scale(1.03);
       }
+
     }
-  }
 
-
-  &-card {
-    display: flex;
-    flex: 1 1 100%;
-    flex-direction: column;
-    padding: spacing(2);
-    background: white;
-    border-radius: 0.5rem;
-
-    img {
+    &__card-image {
       display: block;
       width: 100%;
       aspect-ratio: 4 / 3;
@@ -68,32 +42,63 @@
       object-fit: cover;
       border-radius: 0.25rem;
     }
-  }
 
-  @layer components {
-    .actividades-card {
-      transition: 0.3s;
+    &__card-title {
+      margin-bottom: spacing(1);
+    }
 
-      &:hover {
-        transform: scale(1.03);
+    &__card-description {
+      line-height: 1.5;
+    }
+
+    &__galeria-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: spacing(1);
+
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 0.375rem;
       }
     }
-  }
 
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: spacing(2);
+      max-width: 30rem;
 
-  @include container-up(sm) {
-    &__galeria-grid {
-      grid-template-columns: repeat(2, 1fr);
+      input,
+      textarea {
+        padding: spacing(1);
+        border: 1px solid #ccc;
+        border-radius: 0.25rem;
+
+        &:focus {
+          outline: none;
+          border-color: $accent;
+        }
+      }
     }
 
-    &-card {
-      flex: 1 1 calc(50% - #{spacing(3)});
-    }
-  }
 
-  @include container-up(md) {
-    &__galeria-grid {
-      grid-template-columns: repeat(4, 1fr);
+    @include container-up(sm) {
+      &__galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      &__card {
+        flex: 1 1 calc(50% - #{spacing(3)});
+      }
+    }
+
+    @include container-up(md) {
+      &__galeria-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
   }
 }

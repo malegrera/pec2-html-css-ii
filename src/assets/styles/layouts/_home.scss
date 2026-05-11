@@ -1,9 +1,9 @@
 @use "../variables" as *;
-@use "../dependencies" as *;
 @use "../tools/mixins" as *;
 @use "../tools/functions" as *;
+@use "../dependencies" as *;
 
-@layer base, component, utilities;
+@layer base, bootstrap, components, utilities;
 
 .poster {
   min-height: 100dvh;
@@ -33,7 +33,7 @@
       "cta"
       "organizer";
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: spacing(2);
   }
 
   .poster__header {
@@ -42,6 +42,14 @@
 
   .poster__image {
     grid-area: image;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
   }
 
   .poster__tagline {
@@ -57,23 +65,18 @@
     grid-area: organizer;
   }
 
-  .poster__image img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 1rem;
-  }
+
 
   @layer components {
-    .poster__header {
-      display: inherit;
-    }
+    // .poster__header {
+    //   display: inherit;
+    // }
 
     .poster__title {
       font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 800;
       line-height: 1.1;
+      text-align: center;
       text-transform: uppercase;
     }
 
@@ -89,7 +92,7 @@
     }
 
     .poster__location {
-      font-size: 1.5rem;
+      font-size: 1.1rem;
     }
 
     .poster__tagline {
@@ -113,11 +116,16 @@
       display: contents;
     }
 
-    .poster__title {
+    .poster__header {
       z-index: 2;
       grid-row: 1;
       grid-column: 1 / 6;
-      font-size: clamp(1rem, 3.5vw, 4rem);
+
+    }
+
+    .poster__title {
+      text-align: left;
+      // font-size: clamp(1rem, 3.5vw, 4rem);
     }
 
     .poster__date {
@@ -163,7 +171,19 @@
   .poster {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
     min-height: 100dvh;
+    text-align: center;
+  }
+
+  .poster__image {
+    order: -1;
+    width: 100%;
+  }
+
+  .poster__cta {
+    width: fit-content;
   }
 }
 

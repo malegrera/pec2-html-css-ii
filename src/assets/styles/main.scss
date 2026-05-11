@@ -3,38 +3,49 @@
  * Do not include SCSS code in this file.
  */
 
+
 /**
  * Import variables, mixins and functions
  */
 @use "variables";
-@use "tools/mixins";
 @use "tools/functions";
+@use "tools/mixins";
 
 /**
  * Import dependencies
  */
+
 @use "dependencies";
+
 
 /**
  * Import base styles
  */
+
 @use "base";
+
+
+/**
+ * Import layouts
+ */
+
+@use "layouts/home";
+@use "layouts/artesanos";
+@use "layouts/jornadas";
+@use "layouts/actividades";
+
 
 /**
  * Import components
  */
+
 @use "components/header";
 @use "components/footer";
 @use "components/carousel";
 @use "components/modal";
 
-/**
- * Import layouts
- */
-@use "layouts/home";
-@use "layouts/artesanos";
-@use "layouts/jornadas";
-@use "layouts/actividades";
+
+
 
 /**
  * Do NOT include anything else in this file!
