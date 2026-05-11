@@ -1,10 +1,11 @@
-@use "../variables.scss" as *;
+@use "../variables" as *;
+@use "../tools/functions" as *;
 @use "../dependencies" as *;
 
 
 .actividades__galeria {
   max-width: clamp(20rem, 90vw, 56rem);
-  margin: 1rem auto;
+  margin: spacing(2) auto;
 
   .carousel {
     overflow: hidden;
@@ -36,7 +37,7 @@
       display: inline-block;
       padding: spacing(1) spacing(1.5);
       margin: 0;
-      background: rgb(0 0 0 / 55%);
+      background: color-mix(in oklch, $dark 55%, transparent);
       border-radius: 0.5rem;
     }
   }

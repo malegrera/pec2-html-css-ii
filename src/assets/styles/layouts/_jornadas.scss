@@ -1,21 +1,22 @@
 @use "../variables" as *;
 @use "../tools/mixins" as *;
+@use "../tools/functions" as *;
 
 .jornadas {
-  padding: clamp(1rem, 3vw, 2rem); 
+  padding: clamp(1rem, 3vw, 2rem);
   container-type: inline-size;
 
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: spacing(2);
     max-width: 70ch;
     margin: 0 auto;
   }
 
   &__header {
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #eee;
+    padding-bottom: spacing(2);
+    border-bottom: 1px solid color-mix(in oklch, $light 80%, $dark);
   }
 
   &__title {
@@ -39,13 +40,13 @@
     }
 
     figcaption {
-      margin-top: 0.5rem;
+      margin-top: spacing(1);
       font-size: 0.85rem;
       color: color-mix(in oklch, $dark 60%, $light);
     }
 
     &:has(figcaption) {
-      margin-bottom: 2rem;
+      margin-bottom: spacing(3);
     }
   }
 
@@ -58,7 +59,7 @@
   }
 
   blockquote {
-    padding: 1rem 1.5rem;
+    padding: spacing(2) spacing(3);
     font-style: italic;
     background: color-mix(in oklch, $light 90%, white);
     border-left: 4px solid $secondary;
@@ -69,15 +70,15 @@
     list-style: none;
 
     li {
-      margin-bottom: 0.5rem;
+      margin-bottom: spacing(1);
     }
   }
 
   &__footer-note {
-    padding-top: 1rem;
+    padding-top: spacing(2);
     font-size: 0.85rem;
     color: color-mix(in oklch, $dark 50%, $light);
-    border-top: 1px solid #eee;
+    border-top: 1px solid color-mix(in oklch, $light 80%, $dark);
   }
 
   //container queries
@@ -89,14 +90,14 @@
   }
 
   @include container-up(md) {
-    padding: 2rem;
+    padding: spacing(4);
 
     &__title {
       font-size: 2rem;
     }
 
     &__content {
-      gap: 1.5rem;
+      gap: spacing(3);
     }
   }
 }

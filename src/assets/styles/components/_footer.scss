@@ -1,19 +1,20 @@
 @use "../variables" as *;
 @use "../tools/mixins" as *;
+@use "../tools/functions" as *;
 @use "sass:color";
 
 .footer {
   width: 100%;
   container-type: inline-size;
-  color: #eee;
-  background-color: #222;
+  color: $light;
+  background-color: $dark;
 
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: spacing(4);
     align-items: center;
-    padding:  clamp(1.5rem, 3vw, 2.5rem) 0;
+    padding:  clamp(spacing(3), 3vw, spacing(5)) 0;
     text-align: center;
   }
 
@@ -30,14 +31,14 @@
   &__nav {
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(0.75rem, 1.5vw, 1rem);
+    gap: clamp(spacing(2), 1.5vw, spacing(3));
     justify-content: center;
     padding: 0;
     margin: 0;
     list-style: none;
 
     a {
-      color: #eee;
+      color: $light;
       text-decoration: none;
 
       &:hover {
@@ -49,14 +50,14 @@
 
   &__social {
     display: flex;
-    gap: 1rem;
+    gap: spacing(2);
     justify-content: center;
     padding: 0;
     margin: 0;
     list-style: none;
 
     a {
-      color: #eee;
+      color: $light;
 
       &:hover {
         color: $primary;
@@ -68,7 +69,7 @@
     width: 100%;
     padding: 1rem;
     text-align: center;
-    border-top: 1px solid #444;
+    border-top: 1px solid color-mix(in oklch, $dark 70%, $light);
   }
 
   @include container-up(md) {
