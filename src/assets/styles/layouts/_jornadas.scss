@@ -83,13 +83,13 @@
 
   //container queries
 
-  @include container-up(sm) {
+  @include container-up(narrow) {
     &__title {
       font-size: 1.8rem;
     }
   }
 
-  @include container-up(md) {
+  @include container-up(wide) {
     padding: spacing(4);
 
     &__title {

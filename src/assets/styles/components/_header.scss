@@ -69,7 +69,7 @@
     }
   }
 
-  @include container-up(md) {
+  @include container-up(wide) {
     &__brand {
       max-width: none;
       white-space: nowrap;

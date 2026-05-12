@@ -1,7 +1,7 @@
 @use "variables" as *;
 @use "sass:color";
 
-@layer base, components, utilities;
+
 
 @layer base {
 html,
@@ -15,14 +15,9 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
-  font-family: $font-family-base;
   background-color: color.mix(white, $primary, 50%);
 }
 
-h1, h2, h3, h4 {
-  font-family: $headings-font-family;
-  letter-spacing: 0.03em;
-}
 
 main {
   flex: 1;
@@ -39,6 +34,6 @@ img {
 @layer utilities {
 :is(.jornadas__title, .ponentes__title, .actividades__title) {
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.15em;
 }
 }

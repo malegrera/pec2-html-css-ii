@@ -60,13 +60,13 @@
   }
 }
 
-@include container-up(sm) {
+@include container-up(narrow) {
   .artesanos-card {
     flex: 1 1 calc(50% - #{spacing(3)});
   }
 }
 
-@include container-up(md) {
+@include container-up(wide) {
   .artesanos-card {
     flex: 1 1 calc(33.333% - #{spacing(3)});
   }

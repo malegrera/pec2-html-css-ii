@@ -39,3 +39,8 @@ $card-border-radius: 0.75rem;
 $carousel-control-color: #fff;
 $carousel-indicator-active-bg: $accent; // tono artesanal
 
+$container-breakpoints: (
+  "tiny": 300px,
+  "narrow": 500px,
+  "wide": 850px
+);

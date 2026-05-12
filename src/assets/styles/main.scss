@@ -3,7 +3,6 @@
  * Do not include SCSS code in this file.
  */
 
-
 /**
  * Import variables, mixins and functions
  */
@@ -45,7 +44,7 @@
 @use "components/modal";
 
 
-
+@layer bootstrap, base, components, utilities;
 
 /**
  * Do NOT include anything else in this file!

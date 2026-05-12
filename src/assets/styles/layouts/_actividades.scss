@@ -84,7 +84,7 @@
     }
 
 
-    @include container-up(sm) {
+    @include container-up(narrow) {
       &__galeria-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -94,7 +94,7 @@
       }
     }
 
-    @include container-up(md) {
+    @include container-up(wide) {
       &__galeria-grid {
         grid-template-columns: repeat(4, 1fr);
       }

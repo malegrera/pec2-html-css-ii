@@ -72,7 +72,7 @@
     border-top: 1px solid color-mix(in oklch, $dark 70%, $light);
   }
 
-  @include container-up(md) {
+  @include container-up(wide) {
     &__content {
       flex-direction: row;
       align-items: center;
