@@ -2,6 +2,7 @@
  * Use this file to import partials.
  * Do not include SCSS code in this file.
  */
+@layer bootstrap, base, components, utilities;
 
 /**
  * Import variables, mixins and functions
@@ -43,8 +44,6 @@
 @use "components/carousel";
 @use "components/modal";
 
-
-@layer bootstrap, base, components, utilities;
 
 /**
  * Do NOT include anything else in this file!
