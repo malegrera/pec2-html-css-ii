@@ -2,7 +2,6 @@
  * Use this file to import partials.
  * Do not include SCSS code in this file.
  */
-@layer bootstrap, base, components, utilities;
 
 /**
  * Import variables, mixins and functions
@@ -14,21 +13,18 @@
 /**
  * Import dependencies
  */
-
 @use "dependencies";
 
 
 /**
  * Import base styles
  */
-
 @use "base";
 
 
 /**
  * Import layouts
  */
-
 @use "layouts/home";
 @use "layouts/artesanos";
 @use "layouts/jornadas";
@@ -38,7 +34,6 @@
 /**
  * Import components
  */
-
 @use "components/header";
 @use "components/footer";
 @use "components/carousel";

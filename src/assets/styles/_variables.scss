@@ -35,10 +35,11 @@ $input-padding-x: 0.75rem;
 //Bootstrap Cards
 $card-border-radius: 0.75rem;
 
-// Variables carousel
+//Variables carousel
 $carousel-control-color: #fff;
-$carousel-indicator-active-bg: $accent; // tono artesanal
+$carousel-indicator-active-bg: $accent; 
 
+//Breakpoints para container queries
 $container-breakpoints: (
   "tiny": 300px,
   "narrow": 500px,
